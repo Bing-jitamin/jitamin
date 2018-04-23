@@ -117,7 +117,7 @@ class AnalyticController extends Controller
         $this->response->html($this->helper->layout->analytic('project/analytic/user_time_distribution', [
             'project' => $project,
             'metrics' => $this->userDistributionTimeAnalytic->build($project['id']),
-            'title'   => t('User repartition'),
+            'title'   => t('User time repartition'),
         ]));
     }
 
