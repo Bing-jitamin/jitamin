@@ -448,7 +448,7 @@ class TaskHelper extends Base
     {
         if (!isset($this->columns[$task['project_id']])) {
             $this->columns[$task['project_id']] = $this->columnModel->getList($task['project_id']);
-        }
+        }        
 
         return $this->taskModel->getProgress($task, $this->columns[$task['project_id']]);
     }

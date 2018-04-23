@@ -11,7 +11,7 @@
         </li>
         <li <?= $sorting === 'date' ? 'class="active"' : '' ?>>
             <i class="fa fa-sort-amount-asc fa-fw"></i>
-            <?= $this->url->link(t('Sort by namedate'), 'Task/TaskController', 'gantt', ['project_id' => $project['id'], 'sorting' => 'datename']) ?>
+            <?= $this->url->link(t('Sort by namedate'), 'Task/TaskController', 'gantt', ['project_id' => $project['id'], 'sorting' => 'namedate']) ?>
         </li>
     </ul>
 </div>

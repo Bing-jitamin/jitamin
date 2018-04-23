@@ -93,10 +93,12 @@ class TaskController extends Controller
         if ($sorting === 'date') {
             $filter->getQuery()->asc(TaskModel::TABLE.'.date_started')->asc(TaskModel::TABLE.'.date_creation');
         } else if ($sorting === 'namedate') {
-			$filter->getQuery()->asc(TaskModel::TABLE.'.owner_id')->asc(TaskModel::TABLE.'.date_started');
+            $filter->getQuery()->asc(TaskModel::TABLE.'.owner_id')->asc(TaskModel::TABLE.'.date_started');
+            error_log('排序1',3,"G:\\Jitamin\\test.log");
 		} else {
             $filter->getQuery()->asc('column_position')->asc(TaskModel::TABLE.'.position');
         }
+        //error_log(json_encode($filter->format(new TaskGanttFormatter($this->container))),3,"G:\\Jitamin\\test.log");
 
         $this->response->html($this->helper->layout->app('task/gantt', [
             'project'     => $project,

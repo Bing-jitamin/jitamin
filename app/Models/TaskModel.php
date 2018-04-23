@@ -228,7 +228,10 @@ class TaskModel extends Model
             return 100;
         }
 
-        return isset($task['progress']) && $task['progress'] ?: 0;
+        // 修复进度问题
+        //error_log(json_encode(isset($task['progress']) && $task['progress'] ?$task['progress']: 0),3,"G:\\Jitamin\\progress.log");
+
+        return isset($task['progress']) && $task['progress'] ? $task['progress'] : 0;
     }
 
     /**
