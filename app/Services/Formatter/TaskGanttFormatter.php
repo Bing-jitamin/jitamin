@@ -60,7 +60,8 @@ class TaskGanttFormatter extends BaseFormatter implements FormatterInterface
         return [
             'type'  => 'task',
             'id'    => $task['id'],
-            'title' => $task['title'].' -> '.($task['assignee_name']?:$task['assignee_username']),
+            //'title' => $task['title'].' -> '.($task['assignee_name']?:$task['assignee_username']),
+            'title' => $task['title'].(($task['assignee_name']||$task['assignee_username'])?' -> '.($task['assignee_name']?:$task['assignee_username']):''),
             'start' => [
                 (int) date('Y', $start),
                 (int) date('n', $start),
