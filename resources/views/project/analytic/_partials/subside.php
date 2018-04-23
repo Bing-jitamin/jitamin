@@ -6,6 +6,9 @@
         <li <?= $this->app->setActive('Project/AnalyticController', 'userDistribution') ?>>
             <?= $this->url->link(t('User repartition'), 'Project/AnalyticController', 'userDistribution', ['project_id' => $project['id']]) ?>
         </li>
+        <li <?= $this->app->setActive('Project/AnalyticController', 'userTimeDistribution') ?>>
+            <?= $this->url->link(t('User time repartition'), 'Project/AnalyticController', 'userTimeDistribution', ['project_id' => $project['id']]) ?>
+        </li>
         <li <?= $this->app->setActive('Project/AnalyticController', 'cfd') ?>>
             <?= $this->url->link(t('Cumulative flow diagram'), 'Project/AnalyticController', 'cfd', ['project_id' => $project['id']]) ?>
         </li>

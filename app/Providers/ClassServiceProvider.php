@@ -28,6 +28,7 @@ class ClassServiceProvider implements ServiceProviderInterface
         'Analytic' => [
             'TaskDistributionAnalytic',
             'UserDistributionAnalytic',
+            'UserDistributionTimeAnalytic',
             'EstimatedTimeComparisonAnalytic',
             'AverageLeadCycleTimeAnalytic',
             'AverageTimeSpentColumnAnalytic',

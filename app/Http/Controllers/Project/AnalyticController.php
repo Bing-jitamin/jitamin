@@ -108,6 +108,20 @@ class AnalyticController extends Controller
     }
 
     /**
+     * Show users time repartition.
+     */
+    public function userTimeDistribution()
+    {
+        $project = $this->getProject();
+
+        $this->response->html($this->helper->layout->analytic('project/analytic/user_time_distribution', [
+            'project' => $project,
+            'metrics' => $this->userDistributionTimeAnalytic->build($project['id']),
+            'title'   => t('User repartition'),
+        ]));
+    }
+
+    /**
      * Show cumulative flow diagram.
      */
     public function cfd()

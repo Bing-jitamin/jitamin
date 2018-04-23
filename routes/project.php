@@ -61,6 +61,7 @@ return [
 // Analytics routes
 'project/{project_id}/analytics/tasks'                => 'Project/AnalyticController@taskDistribution',
 'project/{project_id}/analytics/users'                => 'Project/AnalyticController@userDistribution',
+'project/{project_id}/analytics/users'                => 'Project/AnalyticController@userTimeDistribution',
 'project/{project_id}/analytics/cfd'                  => 'Project/AnalyticController@cfd',
 'project/{project_id}/analytics/burndown'             => 'Project/AnalyticController@burndown',
 'project/{project_id}/analytics/average-time-column'  => 'Project/AnalyticController@averageTimeByColumn',

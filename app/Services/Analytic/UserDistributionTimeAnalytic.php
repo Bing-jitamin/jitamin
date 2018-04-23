@@ -16,7 +16,7 @@ use Jitamin\Foundation\Base;
 /**
  * User Distribution.
  */
-class UserDistributionAnalytic extends Base
+class UserDistributionTimeAnalytic extends Base
 {
     /**
      * Build Report.
@@ -30,11 +30,12 @@ class UserDistributionAnalytic extends Base
         $metrics = [];
         $total = 0;
         $tasks = $this->taskFinderModel->getAll($project_id);
-        $users = $this->projectUserRoleModel->getAssignableUsersList($project_id);        
+        $users = $this->projectUserRoleModel->getAssignableUsersList($project_id);
+        // error_log(json_encode($tasks),3,"G:\\Jitamin\\test.log");
 
         foreach ($tasks as $task) {
             $user = isset($users[$task['owner_id']]) ? $users[$task['owner_id']] : $users[0];
-            $total++;            
+            $total+=$task['time_estimated'];            
             
             if (!isset($metrics[$user])) {
                 $metrics[$user] = [
@@ -44,7 +45,7 @@ class UserDistributionAnalytic extends Base
                 ];
             }
 
-            $metrics[$user]['nb_tasks']++;
+            $metrics[$user]['nb_tasks']+=$task['time_estimated'];
         }
         
 
