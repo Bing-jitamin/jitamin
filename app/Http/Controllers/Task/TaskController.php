@@ -92,7 +92,7 @@ class TaskController extends Controller
 
         if ($sorting === 'date') {
             $filter->getQuery()->asc(TaskModel::TABLE.'.date_started')->asc(TaskModel::TABLE.'.date_creation');
-        } else if ($sorting === 'namedate') {
+        } else if ($sorting === 'performer') {
             $filter->getQuery()->asc(TaskModel::TABLE.'.owner_id')->asc(TaskModel::TABLE.'.date_started');            
 		} else {
             $filter->getQuery()->asc('column_position')->asc(TaskModel::TABLE.'.position');
